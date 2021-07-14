@@ -22,6 +22,7 @@ urlpatterns = [
     path('', include('authjwt.api.urls'), name='authjwt'),
     path('', include('products.urls'), name='products'),
     path('',include('favourites.urls'),name="favourites"),
+    path('',include('orders.urls'),name="orders"),
     path('gettoken/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('refreshtoken/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

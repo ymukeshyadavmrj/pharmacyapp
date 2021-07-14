@@ -25,15 +25,8 @@ def favouritesapi(request, pk=None):
   return Response(serializer.data)
 
  if request.method == 'POST':
-  print(request.data)
   request.data['product']=pk
   request.data['user']=request.user.id
-  print("================================================================================================================================================================================")
-  #request.data['user__username']=request.user.username
-  print(request.data)
-  #request.data['product__id']=pk
-  print(request.data)
-  prod = Product.objects.get(id=pk)
   serializer = FavouritesSerializer(data=request.data)
   if serializer.is_valid():
    serializer.save()
@@ -41,7 +34,6 @@ def favouritesapi(request, pk=None):
   return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
  if request.method == 'PATCH':
-  id = pk
   fav = Favourites.objects.get(product__id=pk,user=request.user)
   serializer = FavouritesSerializer(fav, data=request.data, partial=True)
   if serializer.is_valid():

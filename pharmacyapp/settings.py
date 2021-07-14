@@ -85,6 +85,10 @@ WSGI_APPLICATION = 'pharmacyapp.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+REST_FRAMEWORK = {
+    'DATE_INPUT_FORMATS': ['iso-8601', '%Y-%m-%dT%H:%M:%S.%fZ'],
+}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -94,7 +98,7 @@ DATABASES = {
     }
 }
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=500),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=500),
     }
 
