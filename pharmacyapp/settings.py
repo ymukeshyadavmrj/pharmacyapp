@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f=(aw#w#1k5el9nrq9uou!txi@fg$g8td#dz*d#hg%&agdgmq9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1:8000','*']
+ALLOWED_HOSTS = ['47.15.12.52','0.0.0.0']
 
 
 # Application definition
@@ -92,8 +92,8 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pharmacyapp',
-        'USER': 'pharmacyapp',
+        'NAME': 'ymukeshyadavmrj$pharmacyapp',
+        'USER': 'ymukeshyadavmrj',
         'PASSWORD': 'pharmacyapp',
     }
 }

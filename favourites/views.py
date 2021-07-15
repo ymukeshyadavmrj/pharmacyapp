@@ -38,5 +38,5 @@ def favouritesapi(request, pk=None):
   serializer = FavouritesSerializer(fav, data=request.data, partial=True)
   if serializer.is_valid():
    serializer.save()
-   return Response({'msg':'Partial Data Updated'})
+   return Response({'updateMessage':'Partial Data Updated'})
   return Response(serializer.errors)
